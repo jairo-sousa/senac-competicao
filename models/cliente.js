@@ -13,8 +13,20 @@ class ClienteModel {
         });
     }
 
-    getAll(result) {
+    getAll() {
         return this.runQuery(sqlCliente.getAll)
+    }
+
+    post(clienteSent){
+        return this.runQuery(sqlCliente.post, clienteSent)
+    }
+
+    update(id ,clienteSent){
+        return this.runQuery(sqlCliente.update, [ clienteSent, id])
+    }
+
+    delete(id){
+        return this.runQuery(sqlCliente.remove, id)
     }
 
 }
