@@ -7,6 +7,8 @@ const initSql =`
         telefone VARCHAR(30),
         observacao VARCHAR(100)
     );
+
+    INSERT INTO cliente (nome, telefone, observacao) VALUES ("Mariana", "321654987", "cliente");
 ` 
 
 module.exports = initSql
