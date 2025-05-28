@@ -25,7 +25,7 @@ class ClienteModel {
         return this.runQuery(sqlCliente.post, clienteSent)
     }
 
-    update(id ,clienteSent){
+    update(id, clienteSent){
         return this.runQuery(sqlCliente.update, [ clienteSent, id])
     }
 

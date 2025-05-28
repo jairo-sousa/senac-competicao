@@ -1,0 +1,103 @@
+:root {
+  font-size: 62.5%;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    font-size: 1.6rem;
+    width: 100%;
+    height: 100dvh;
+    
+    background-color: #ea91b7;
+    color: #fff;
+    
+    font-family: "Quicksand", sans-serif;
+    padding-top: 2rem;
+}
+main{
+    max-width: 120rem;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    font-weight: 400;
+}
+
+#clientes{
+    display: flex;
+    flex-direction: column;
+    
+    
+    gap: 1.5rem;
+}
+
+.client-row ul, .client-row-header ul{
+    display: flex;
+    gap: 2rem;
+    font-size: 2rem;
+}
+
+.client-row ul li, .client-row-header ul li{
+    width: 10rem;
+}
+
+.client-row{
+    background-color: #c5517f;
+    
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.client-row-header{
+    
+    margin-top: 4rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+
+button{
+    background-color: #f8f4f4;
+    border: none;
+    min-width: 8rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    color: #c5517f;
+    font-weight: 500;
+}
+
+input{
+    background-color: #f8f4f4;
+    border: none;
+    min-width: 8rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+
+    color: #c5517f;
+
+    outline-color: #c5517f;
+}
+
+label{
+    font-size: 2rem;
+}
+
+form{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}

@@ -6,9 +6,16 @@ class ClienteController {
 
         response.then((clientes) => {
             
-            const clientesHtml = clientes.map((cliente) => `<p>${JSON.stringify(cliente)}</p>`)
+            const clientesHtml = clientes.map((cliente) => `<div class='client-row'>
+                <ul>
+                    <li>${cliente.id}</li>
+                    <li>${cliente.nome}</li>
+                    <li>${cliente.telefone}</li>
+                    <li>${cliente.observacao}</li>
+                </ul>
+            </div>`)
             
-            return reply.status(200).send(clientesHtml.toString())
+            return reply.status(200).send(clientesHtml.join(""))
         })
             .catch((error) => {
                 return reply.status(400).json(error)
@@ -21,7 +28,14 @@ class ClienteController {
         const response = clienteModel.post(clienteSent)
 
         response.then((novoCliente) => {
-            return reply.status(200).send(`<p>${JSON.stringify({idNovoCliente: novoCliente.insertId })}</p>`)
+            return reply.status(200).send(`<div class='client-row'>
+                <ul>
+                    <li>${novoCliente.insertId}</li>
+                    <li>${clienteSent.nome}</li>
+                    <li>${clienteSent.telefone}</li>
+                    <li>${clienteSent.observacao}</li>
+                </ul>
+            </div>`)
         })
             .catch((error) => {
                 return reply.status(400).json(error)
