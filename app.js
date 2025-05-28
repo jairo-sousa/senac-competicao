@@ -4,16 +4,13 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-const clienteRotas = require("./routers/cliente")
+const router = require("./routers/")
+
+router(app, express)
 
 const Database = require("./database/database")
 
 Database.init()
-
-app.use(clienteRotas)
-
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
 
 app.use(express.static(__dirname + '/public'));
 

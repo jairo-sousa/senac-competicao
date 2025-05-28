@@ -4,8 +4,11 @@ class ClienteController {
     getAll(req, reply) {
         const response = clienteModel.getAll()
 
-        response.then((Clientes) => {
-            return reply.status(200).json(Clientes)
+        response.then((clientes) => {
+            
+            const clientesHtml = clientes.map((cliente) => `<p>${JSON.stringify(cliente)}</p>`)
+            
+            return reply.status(200).send(clientesHtml.toString())
         })
             .catch((error) => {
                 return reply.status(400).json(error)

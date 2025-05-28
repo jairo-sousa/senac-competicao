@@ -12,12 +12,28 @@
         crossorigin="anonymous"></script>
 
     <!-- SCRIPT -->
-     <script src="./script.js" defer></script>
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
+    <main hx-get="/cliente" hx-target="#clientes" hx-trigger="load">
+        <h1>Clientes</h1>
 
-    <h1>Bem vindo</h1>
+        <form id="clienteForm">
+
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome">
+
+            <label for="telefone">Telefone: </label>
+            <input type="number" name="telefone" id="telefone">
+
+            <label for="observacao">Observação: </label>
+            <input type="text" name="observacao" id="observacao">
+
+            <button hx-post="/cliente" hx-target="#clientes" hx-swap="beforeend">Criar</button>
+        </form>
+        <div id="clientes"></div>
+    </main>
 </body>
 
 </html>
