@@ -2,6 +2,10 @@ const getAll = `
     SELECT * FROM cliente;
 `
 
+const getId = `
+    SELECT * FROM cliente WHERE ?;
+`
+
 const post = `
     INSERT INTO cliente SET ?;
 `
@@ -16,6 +20,7 @@ const remove = `
 
 module.exports = { 
     getAll,
+    getId,
     post,
     update,
     remove

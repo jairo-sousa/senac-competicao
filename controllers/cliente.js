@@ -17,11 +17,11 @@ class ClienteController {
 
     post(req, reply) {
         const clienteSent = req.body
-
+        
         const response = clienteModel.post(clienteSent)
 
         response.then((novoCliente) => {
-            return reply.status(200).json(novoCliente)
+            return reply.status(200).send(`<p>${JSON.stringify({idNovoCliente: novoCliente.insertId })}</p>`)
         })
             .catch((error) => {
                 return reply.status(400).json(error)

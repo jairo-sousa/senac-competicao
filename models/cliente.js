@@ -7,7 +7,7 @@ class ClienteModel {
         return new Promise((resolve, reject) => {
             con.query(sql, params, (error, response) => {
                 if (error) reject(error);
-
+            
                 resolve(response);
             });
         });
@@ -15,6 +15,10 @@ class ClienteModel {
 
     getAll() {
         return this.runQuery(sqlCliente.getAll)
+    }
+
+    getId(id) {
+        return this.runQuery(sqlCliente.getId, id)
     }
 
     post(clienteSent){
