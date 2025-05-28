@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS salao;
+
+CREATE TABLE IF NOT EXISTS cliente(
+    id INT PRIMARY KEY AUTO_INCREMENT
+    nome VARCHAR(100) NOT NULL, 
+    telefone VARCHAR(30),
+    observacao VARCHAR(100)
+);
